@@ -1,0 +1,19 @@
+package com.mAadhar.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.mAadhar.repository.FreshcardRepository;
+import com.mAadhar.bean.Freshcard;
+@Service
+public class FreshcardService {
+	
+	@Autowired
+	FreshcardRepository freshcard ;
+	
+	public String storeAadharCardDetails(Freshcard card) {
+		freshcard.save(card);
+		return "details stored";
+	}
+
+}

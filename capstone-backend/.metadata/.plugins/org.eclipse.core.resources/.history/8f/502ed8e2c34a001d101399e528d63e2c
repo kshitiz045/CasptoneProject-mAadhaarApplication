@@ -1,0 +1,30 @@
+package com.mAadhar.controller;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.mAadhar.bean.Freshcard;
+import com.mAadhar.repository.FreshcardRepository;
+import com.mAadhar.service.FreshcardService;
+
+@RestController
+@CrossOrigin
+public class FreshcardController {
+	
+	@Autowired
+	FreshcardService freshcard;
+	
+	@RequestMapping(value = "storeFreshAadharCardDetails", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public String storeAadharCardDetails(@RequestBody Freshcard card) {
+		return freshcard.storeAadharCardDetails(card);
+	}
+	
+	
+
+}

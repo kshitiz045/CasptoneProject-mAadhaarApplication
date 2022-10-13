@@ -1,0 +1,47 @@
+package com.mAadhar.controller;
+
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.mAadhar.bean.Freshcard;
+import com.mAadhar.repository.FreshcardRepository;
+import com.mAadhar.service.FreshcardService;
+
+@RestController
+@CrossOrigin
+public class FreshcardController {
+	
+	@Autowired
+	FreshcardService freshcard;
+	
+	@RequestMapping(value = "user/storeFreshAadharCardDetails", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public String storeAadharCardDetails(@RequestBody Freshcard card) {
+		return freshcard.storeAadharCardDetails(card);
+	}
+	
+	@RequestMapping(value = "user/updateAadharCardDetails", method = RequestMethod.PATCH, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public String updateAadharCardDetails(@RequestBody Freshcard card) {
+		return freshcard.updateAadharCardDetails(card);
+	}
+	@RequestMapping(value="admin/allCards",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Freshcard> allCards() {
+		return freshcard.allCards();
+	}
+	
+	@RequestMapping(value="admin/deleteCard/{id}",method = RequestMethod.DELETE)
+	public String deleteProductUsingId(@PathVariable("id") int id) {
+		return freshcard.deleteCard(id);
+	}
+	
+	
+
+}
