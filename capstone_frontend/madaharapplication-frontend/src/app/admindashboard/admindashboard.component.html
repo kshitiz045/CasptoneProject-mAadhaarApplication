@@ -1,0 +1,58 @@
+<div class="container mt-4 ">
+    <h3 class="text-center">Welcome to Dashboard {{user}}</h3> 
+    <br/>
+    <h2 class="text-center text-danger">{{msg}}</h2>
+    <table class="table table-striped table-hover border">
+        <thead>
+        <tr class="h-10">
+            <th scope="col">Id</th>
+            <th>Name</th>
+            <th>Date Of Birth</th>
+            <th>Address</th>
+            <th>EmailId</th>
+            <th>Number</th>
+            <th>Gender</th>
+            <th>Application Type</th>
+            <th>Status</th>
+            <th>Actions</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of cards">
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.dob}}</td>
+            <td>{{product.address}}</td>
+            <td>{{product.emailid}}</td>
+            <td>{{product.number}}</td>
+            <td>{{product.gender}}</td>
+            <td>{{product.type}}</td>
+            <td>Applied</td>
+            
+            <td>
+            <input type="button" value="delete" (click)="deleteCard(product.id)"/>
+            <input type="button" value="issue" (click)="passCard(product.id)"/>
+                </td>
+                
+        </tr>
+    </tbody>
+
+    </table>
+    <div class="container">
+        <br/>
+        <div class="row mt-5">
+          <div class="col align-self-start">
+            
+          </div>
+          <div class="col align-self-center">
+            
+          </div>
+          <div class="col align-self-end">
+            <input type="button" value="logout" (click)="logout()"/>
+          </div>
+        </div>
+      </div>
+
+
+</div>
