@@ -1,0 +1,28 @@
+<div class="container mt-5 w-50 bg-light border border-2 rounded">
+    <br/>
+    <span style="color: green;" class="text-center"><h5>{{msg}}</h5></span>
+    <h1 class="text-center ">Applying For Fresh Aadhar Card</h1>
+    <hr>
+<form (ngSubmit)="deleteCardDetails()" >
+  <div class="mb-3">
+    <label class="form-label">Id Number</label>
+    <input type="number" class="form-control" formControlName = "id">
+  </div>
+  <div class="mb-3"> 
+    <label class="form-label">Reason for cancel your Aadhar Card</label>
+    <input type="text" class="form-control" formControlName = "reason">
+  </div>
+    <div class="mb-3">
+      <label class="form-label">Do want to cancel your Aadhar Card [Type "Yes" for confirmation else type "No"]</label>
+      <input type="text" class="form-control" formControlName = "name">
+    </div>
+    
+    <div class="text-center">
+    <button type="submit" class="btn btn-primary me-2" >Submit</button>
+    
+    <button type="submit" class="btn btn-primary " (click)="goBack()">Go Back</button><br/>
+    </div>
+    <br/>
+  </form>
+
+</div>
