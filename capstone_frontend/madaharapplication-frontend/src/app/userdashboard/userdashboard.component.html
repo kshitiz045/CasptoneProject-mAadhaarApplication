@@ -1,0 +1,44 @@
+<div class="container text-center mt-5">
+    <h2>Welcome To Dashboard {{user}}</h2>
+    <br>
+    <br>
+    
+      <div class="container ">
+        <div class="row mt-5 " style="height: 100px;">
+            
+          <div class="col-md-4 border border-2 border-warning">
+            <p></p>
+            Apply for Fresh Aadhaar-card
+            <h6 class="mt-5"><a routerLink="freshcard">Click Here</a></h6>
+        </div>
+          <div class="col-md-4 border border-2 border-warning">
+            <p></p>
+            Apply To Update Aadhaar-card
+            <h6 class="mt-5"><a routerLink="updatecard">Click Here</a></h6>
+        </div>
+          <div class="col-md-4 border border-2 border-warning ">
+            <p></p>
+            Apply to Delete Aadhaar-card
+            <h6 class="mt-5"><a routerLink="deletecard">Click Here</a></h6>
+        </div>
+         
+        </div>
+        </div>
+
+</div>
+<div class="container">
+  <br/>
+  <div class="row mt-5">
+    <div class="col align-self-start">
+      
+    </div>
+    <div class="col align-self-center">
+      
+    </div>
+    <div class="col align-self-end">
+      <input type="button" value="logout" (click)="logout()"/>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
